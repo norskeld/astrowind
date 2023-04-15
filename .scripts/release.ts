@@ -65,6 +65,9 @@ async function main() {
           // publish my experiments to the actual `npm` registry.
           await copyFile(`${cwd}/.npmrc`, `${cwd}/dist/.npmrc`)
 
+          // Copy `base.css` as well for auto-importing it.
+          await copyFile(`${cwd}/base.css`, `${cwd}/dist/base.css`)
+
           return {
             kind: 'success',
             message: 'Successfully prepared files for a release.'
