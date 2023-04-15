@@ -16,13 +16,13 @@ jobs:
       - name: Use Node Active LTS
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'npm'
       - name: Install Deps
         run: npm ci
       - name: Build & Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm run build
