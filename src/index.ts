@@ -88,7 +88,7 @@ export default function tailwindIntegration(options?: TailwindOptions): AstroInt
 
         if (applyBaseStyles) {
           // Inject the Tailwind base import.
-          injectScript('page-ssr', `import '@astrojs/tailwind/base.css';`)
+          injectScript('page-ssr', `import '@nrsk/astrowind/base.css';`)
         }
       }
     }
