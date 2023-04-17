@@ -17,6 +17,7 @@
   },
   "files": [
     "CHANGELOG.md",
+    "*.css",
     "*.d.ts",
     "*.cjs*",
     "*.js*"
