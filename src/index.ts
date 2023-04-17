@@ -3,7 +3,7 @@ import type { CSSOptions, UserConfig } from 'vite'
 import type { AstroIntegration } from 'astro'
 import autoprefixer from 'autoprefixer'
 
-interface TailwindOptions {
+export interface TailwindOptions {
   config?: {
     /**
      * Path to the config file.
@@ -25,34 +25,34 @@ interface TailwindOptions {
   }
 }
 
-async function getPostCssConfig(
+async function getPostCSSConfig(
   root: UserConfig['root'],
   postcssInlineOptions: CSSOptions['postcss']
 ) {
-  let postcssConfigResult
+  let postcssConfig
 
-  // Check if postcss config is not inlined.
+  // Check if PostCSS config is not inlined.
   if (!(typeof postcssInlineOptions === 'object' && postcssInlineOptions !== null)) {
     const { default: postcssrc } = await import('postcss-load-config')
-    const searchPath = typeof postcssInlineOptions === 'string' ? postcssInlineOptions : root!
+    const searchPath = typeof postcssInlineOptions === 'string' ? postcssInlineOptions : root
 
     try {
-      postcssConfigResult = await postcssrc({}, searchPath)
+      postcssConfig = await postcssrc({}, searchPath)
     } catch {
-      postcssConfigResult = null
+      postcssConfig = null
     }
   }
 
-  return postcssConfigResult
+  return postcssConfig
 }
 
-async function getViteConfiguration(
+async function getViteConfig(
   tailwindConfig: TailwindConfig | { config: string } | undefined,
   viteConfig: UserConfig
 ) {
   // We need to manually load postcss config files because inlining the tailwind and autoprefixer
   // causes vite to ignore postcss config files.
-  const postcssConfig = await getPostCssConfig(viteConfig.root, viteConfig.css?.postcss)
+  const postcssConfig = await getPostCSSConfig(viteConfig.root, viteConfig.css?.postcss)
 
   const postcssOptions = (postcssConfig && postcssConfig.options) ?? {}
   const postcssPlugins = postcssConfig && postcssConfig.plugins ? postcssConfig.plugins.slice() : []
@@ -70,7 +70,7 @@ async function getViteConfiguration(
   }
 }
 
-export default function tailwindIntegration(options?: TailwindOptions): AstroIntegration {
+export default function astrowind(options?: TailwindOptions): AstroIntegration {
   const applyBaseStyles = options?.config?.applyBaseStyles ?? true
   const customConfigPath = options?.config?.path
 
@@ -80,7 +80,7 @@ export default function tailwindIntegration(options?: TailwindOptions): AstroInt
       'astro:config:setup': async ({ config, updateConfig, injectScript }) => {
         // Inject the Tailwind postcss plugin.
         updateConfig({
-          vite: await getViteConfiguration(
+          vite: await getViteConfig(
             customConfigPath ? { config: customConfigPath } : undefined,
             config.vite as UserConfig
           )

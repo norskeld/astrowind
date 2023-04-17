@@ -9,10 +9,11 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "import": "./index.js",
-      "require": "./index.cjs",
-      "types": "./index.d.ts"
-    }
+      "require": "./index.cjs"
+    },
+    "./base.css": "./base.css"
   },
   "files": [
     "CHANGELOG.md",
@@ -53,7 +54,7 @@
   },
   "homepage": "https://github.com/norskeld/astrowind#readme",
   "peerDependencies": {
-    "astro": "^2.3.0",
+    "astro": "^2.2.0",
     "tailwindcss": "^3.3.1"
   },
   "dependencies": {
