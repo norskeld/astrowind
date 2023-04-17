@@ -5,6 +5,7 @@ on:
     workflows: ['test']
     branches: [master]
     types: [completed]
+  workflow_dispatch:
 
 jobs:
   release:
@@ -13,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
       - name: Use Node Active LTS
         uses: actions/setup-node@v2
         with:
