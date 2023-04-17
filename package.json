@@ -1,6 +1,6 @@
 {
   "name": "@nrsk/astrowind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailwind integration for Astro with support for TS configs.",
   "sideEffects": false,
   "type": "module",

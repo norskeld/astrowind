@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/norskeld/astrowind/compare/v1.0.0...v1.0.1) (2023-04-17)
+
+
+### Bug Fixes
+
+* **package:** add `base.css` to the `files` field ([774ed2b](https://github.com/norskeld/astrowind/commit/774ed2b323842931b92f1f30768cd8ba80ad54e3))
+
 # 1.0.0 (2023-04-17)
 
 
