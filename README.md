@@ -5,7 +5,7 @@
 [![Supported Node Versions](https://img.shields.io/static/v1?label=node&message=14+|+16+|+18&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/astrowind/blob/master/package.json#L25 'Supported Node versions')
 [![Semantic Release](https://img.shields.io/static/v1?label=semantic+release&message=✔&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/semantic-release/semantic-release 'This package uses semantic release to handle releasing, versioning, changelog generation and tagging')
 
-Tailwind integration for Astro with support for TypeScript configs.
+Tailwind integration for Astro with TypeScript configs support.
 
 ## License
 
