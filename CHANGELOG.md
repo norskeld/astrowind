@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/norskeld/astrowind/compare/v1.0.1...v2.0.0) (2023-09-01)
+
+
+### Features
+
+* **deps:** upgrade to astro@3, bump deps, change minimum node version to 18 ([8fec432](https://github.com/norskeld/astrowind/commit/8fec432f1d6b52e06f6c61d014d5de16226e182e))
+
+
+### BREAKING CHANGES
+
+* **deps:** Upgraded core peer dependency and node engine version.
+
 ## [1.0.1](https://github.com/norskeld/astrowind/compare/v1.0.0...v1.0.1) (2023-04-17)
 
 
