@@ -1,7 +1,7 @@
 {
   "name": "@nrsk/astrowind",
   "version": "1.0.1",
-  "description": "Tailwind integration for Astro with support for TS configs.",
+  "description": "Tailwind integration for Astro with TypeScript configs support.",
   "sideEffects": false,
   "type": "module",
   "main": "./index.cjs",
