@@ -16,7 +16,9 @@ export interface TailwindOptions {
      * Apply Tailwind's base styles.
      *
      * Disabling this is useful when further customization of Tailwind styles and directives is
-     * required. See {@link https://tailwindcss.com/docs/functions-and-directives#tailwind Tailwind's docs}
+     * required.
+     *
+     * See {@link https://tailwindcss.com/docs/functions-and-directives#tailwind Tailwind's docs}
      * for more details on directives and customization.
      *
      * @default true
